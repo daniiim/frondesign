@@ -1,3 +1,4 @@
+
 // variabelen gebruiken
 var rozeFilter = document.querySelector('.rozefilter');
 var rozeResults = document.querySelectorAll('.rozeresult');
@@ -6,6 +7,7 @@ var blauweResults = document.querySelectorAll('.blauwresult');
 var geleFilter = document.querySelector('.gelefilter');
 var geelResults = document.querySelectorAll('.geelresult');
 var allResults = document.querySelectorAll('.gallery');
+var reset = document.querySelector('.geenfilter');
 var filterToggle = document.querySelector('.toggle');
 var dropDown = document.querySelector('.dropdown-menu');
 
@@ -46,6 +48,13 @@ allResults.forEach(function(el) {
 geelResults.forEach(function(el) {
   el.classList.add('active');
 });
+});
+
+// filters resetten
+reset.addEventListener("click", function() {
+allResults.forEach(function(el) {
+  el.classList.add('active');
+}); 
 });
 
 //log    
