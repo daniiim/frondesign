@@ -1,4 +1,3 @@
-
 // variabelen gebruiken
 var rozeFilter = document.querySelector('.rozefilter');
 var rozeResults = document.querySelectorAll('.rozeresult');
@@ -11,88 +10,105 @@ var reset = document.querySelector('.geenfilter');
 var filterToggle = document.querySelector('.toggle');
 var dropDown = document.querySelector('.dropdown-menu');
 var loader = document.querySelector('.loaderr');
+var tag = document.querySelector('.tag');
+var touch = document.querySelector('.popup');
   
-// dropdown toggle
-filterToggle.addEventListener("click",function(){
-    dropDown.classList.toggle('active');  
-  }
-);   
-
-// filteren op roze
-rozeFilter.addEventListener("click", function(){
-loader.classList.toggle('active');
-allResults.forEach(function(el) {
-  el.classList.remove('active');
-});
-    dropDown.classList.toggle('active');
-    
-    setTimeout(function(){
-    loader.classList.toggle('active');
-    }, 1000);
-    
-rozeResults.forEach(function(el) {
-setTimeout(function(){
-  el.classList.add('active');
-}, 1000);
-});    
-});
-
-// filteren op blauw
-blauweFilter.addEventListener("click", function(){
-loader.classList.toggle('active');
-    allResults.forEach(function(el) {
-  el.classList.remove('active');
-});
-    dropDown.classList.toggle('active');
-    
-    setTimeout(function(){
-    loader.classList.toggle('active');
-    }, 1000);
+    // touch
+        tag.addEventListener('touchstart',function(){
+            touch.classList.add('active');
+        });
  
-blauweResults.forEach(function(el) {
-setTimeout(function(){
-  el.classList.add('active');
-}, 1000);
-});
-});
-
-// filteren op geel
-geleFilter.addEventListener("click", function(){
-loader.classList.toggle('active');
-    allResults.forEach(function(el) {
-  el.classList.remove('active');
-});
-    dropDown.classList.toggle('active');
-    
-    setTimeout(function(){
-    loader.classList.toggle('active');
-    }, 1000);
+        tag.addEventListener('touchend',function(){
+            touch.classList.remove('active');
+        });
  
-geelResults.forEach(function(el) {
-setTimeout(function(){
-  el.classList.add('active');
-}, 1000);
-});
-});
 
-// filters resetten
-reset.addEventListener("click", function(){
-loader.classList.toggle('active');
-    allResults.forEach(function(el) {
-  el.classList.remove('active');
-});
-    dropDown.classList.toggle('active');
-    
-    setTimeout(function(){
+    // dropdown toggle
+    filterToggle.addEventListener("click",function(){
+        dropDown.classList.toggle('active');  
+      }
+    );   
+
+
+    // filteren op roze
+    rozeFilter.addEventListener("click", function(){
     loader.classList.toggle('active');
-    }, 1000);
- 
-allResults.forEach(function(el) {
-setTimeout(function(){
-  el.classList.add('active');
-}, 1000);
-});
-});
+    allResults.forEach(function(el) {
+      el.classList.remove('active');
+    });
+        dropDown.classList.toggle('active');
 
-//log    
-console.log(allResults);
+        setTimeout(function(){
+        loader.classList.toggle('active');
+        }, 1000);
+
+    rozeResults.forEach(function(el) {
+    setTimeout(function(){
+      el.classList.add('active');
+    }, 1000);
+    });    
+    });
+
+
+    // filteren op blauw
+    blauweFilter.addEventListener("click", function(){
+    loader.classList.toggle('active');
+        allResults.forEach(function(el) {
+      el.classList.remove('active');
+    });
+        dropDown.classList.toggle('active');
+
+        setTimeout(function(){
+        loader.classList.toggle('active');
+        }, 1000);
+
+    blauweResults.forEach(function(el) {
+    setTimeout(function(){
+      el.classList.add('active');
+    }, 1000);
+    });
+    });
+
+
+    // filteren op geel
+    geleFilter.addEventListener("click", function(){
+    loader.classList.toggle('active');
+        allResults.forEach(function(el) {
+      el.classList.remove('active');
+    });
+        dropDown.classList.toggle('active');
+
+        setTimeout(function(){
+        loader.classList.toggle('active');
+        }, 1000);
+
+    geelResults.forEach(function(el) {
+    setTimeout(function(){
+      el.classList.add('active');
+    }, 1000);
+    });
+    });
+
+
+    // filters resetten
+    reset.addEventListener("click", function(){
+    loader.classList.toggle('active');
+        allResults.forEach(function(el) {
+      el.classList.remove('active');
+    });
+        dropDown.classList.toggle('active');
+
+        setTimeout(function(){
+        loader.classList.toggle('active');
+        }, 1000);
+
+    allResults.forEach(function(el) {
+    setTimeout(function(){
+      el.classList.add('active');
+    }, 1000);
+    });
+    });
+
+
+    //log    
+    console.log(allResults);
