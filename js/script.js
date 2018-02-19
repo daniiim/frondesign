@@ -10,7 +10,8 @@ var allResults = document.querySelectorAll('.gallery');
 var reset = document.querySelector('.geenfilter');
 var filterToggle = document.querySelector('.toggle');
 var dropDown = document.querySelector('.dropdown-menu');
-
+var loader = document.querySelector('.loaderr');
+  
 // dropdown toggle
 filterToggle.addEventListener("click",function(){
     dropDown.classList.toggle('active');  
@@ -19,42 +20,74 @@ filterToggle.addEventListener("click",function(){
 
 // filteren op roze
 rozeFilter.addEventListener("click", function(){
+loader.classList.toggle('active');
 allResults.forEach(function(el) {
   el.classList.remove('active');
-});   
+});
 
+    setTimeout(function(){
+    loader.classList.toggle('active');
+    }, 1000);
+    
 rozeResults.forEach(function(el) {
+setTimeout(function(){
   el.classList.add('active');
-});   
+}, 1000);
+});    
 });
 
 // filteren op blauw
 blauweFilter.addEventListener("click", function(){
-allResults.forEach(function(el) {
+loader.classList.toggle('active');
+    allResults.forEach(function(el) {
   el.classList.remove('active');
 });
 
+    setTimeout(function(){
+    loader.classList.toggle('active');
+    }, 1000);
+ 
 blauweResults.forEach(function(el) {
+setTimeout(function(){
   el.classList.add('active');
+}, 1000);
 });
 });
 
 // filteren op geel
 geleFilter.addEventListener("click", function(){
-allResults.forEach(function(el) {
+loader.classList.toggle('active');
+    allResults.forEach(function(el) {
   el.classList.remove('active');
 });
 
+    setTimeout(function(){
+    loader.classList.toggle('active');
+    }, 1000);
+ 
 geelResults.forEach(function(el) {
+setTimeout(function(){
   el.classList.add('active');
+}, 1000);
 });
 });
 
 // filters resetten
-reset.addEventListener("click", function() {
+reset.addEventListener("click", function(){
+loader.classList.toggle('active');
+    allResults.forEach(function(el) {
+  el.classList.remove('active');
+});
+
+    setTimeout(function(){
+    loader.classList.toggle('active');
+    }, 1000);
+ 
 allResults.forEach(function(el) {
+setTimeout(function(){
   el.classList.add('active');
-}); 
+}, 1000);
+});
 });
 
 //log    
