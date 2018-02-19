@@ -24,7 +24,8 @@ loader.classList.toggle('active');
 allResults.forEach(function(el) {
   el.classList.remove('active');
 });
-
+    dropDown.classList.toggle('active');
+    
     setTimeout(function(){
     loader.classList.toggle('active');
     }, 1000);
@@ -42,7 +43,8 @@ loader.classList.toggle('active');
     allResults.forEach(function(el) {
   el.classList.remove('active');
 });
-
+    dropDown.classList.toggle('active');
+    
     setTimeout(function(){
     loader.classList.toggle('active');
     }, 1000);
@@ -60,7 +62,8 @@ loader.classList.toggle('active');
     allResults.forEach(function(el) {
   el.classList.remove('active');
 });
-
+    dropDown.classList.toggle('active');
+    
     setTimeout(function(){
     loader.classList.toggle('active');
     }, 1000);
@@ -78,7 +81,8 @@ loader.classList.toggle('active');
     allResults.forEach(function(el) {
   el.classList.remove('active');
 });
-
+    dropDown.classList.toggle('active');
+    
     setTimeout(function(){
     loader.classList.toggle('active');
     }, 1000);
