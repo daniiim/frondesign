@@ -67,3 +67,10 @@
     top: 0px;
     right: 10px;
 }
+.swipe {
+  text-align: center;
+  background: #GFF;
+  color: grey;
+  cursor: pointer;
+  font-size: 30px;
+}
