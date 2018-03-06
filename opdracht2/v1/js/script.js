@@ -7,7 +7,7 @@ var huidigeSlide = 0;
 function volgendeSlide() {
 	gaSlide(huidigeSlide + 1);
 }
-
+ 
 function vorigeSlide() {
 	gaSlide(huidigeSlide - 1);
 }
@@ -25,38 +25,4 @@ volgende.addEventListener('click', function () {
  
 vorige.addEventListener('click', function () {
     vorigeSlide();
-});
-
-// swipe 
-function swipedetect(swipe, callback) {
-    var touch = swipe,
-    swiperichting,
-    startX,
-    distX,
-    limit = 100,
-    handleswipe = callback || function(swiperichting) {}
-  
-    touch.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        swiperichting = 'Niet'
-        dist = 0
-        startX = touchobj.pageX
-        e.preventDefault()
-    }, false)
-  
-    touch.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        distX = touchobj.pageX - startX
-            if (Math.abs(distX) >= 0){
-                volgendeSlide();
-            }
-            else {
-                vorigeSlide();
-            }
-        handleswipe(swiperichting)
-        e.preventDefault()
-    }, false)
-}
-swipedetect(swipe, function(swiperichting){
-    console.log('' + swiperichting +' geswiped');
 });
