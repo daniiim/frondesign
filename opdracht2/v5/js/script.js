@@ -45,6 +45,7 @@ window.addEventListener("keydown", function (event) {
   };
 });
 
+
 // sliden dmv swipen
 // detectie touch start
 swipen.addEventListener('touchstart', function(detect){
