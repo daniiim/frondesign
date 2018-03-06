@@ -47,8 +47,11 @@ function swipedetect(swipe, callback) {
     touch.addEventListener('touchend', function(e){
         var touchobj = e.changedTouches[0]
         distX = touchobj.pageX - startX
-            if (Math.abs(distX) >= limit){
-                swiperichting = (distX < 0)? 'Links' : 'Rechts'
+            if (Math.abs(distX) >= 0){
+                volgendeSlide();
+            }
+            else {
+                vorigeSlide();
             }
         handleswipe(swiperichting)
         e.preventDefault()
@@ -56,6 +59,4 @@ function swipedetect(swipe, callback) {
 }
 swipedetect(swipe, function(swiperichting){
     console.log('' + swiperichting +' geswiped');
-    volgendeSlide();
 });
-
