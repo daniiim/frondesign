@@ -5,6 +5,8 @@
 
 In dit keuzevak heb ik functionaliteiten moeten bedenken, prototypen en uitproberen op het web. Niet met prototyping software, zoals *Invision, Principle* of *Marvel* enzo, maar met de web technologieën in de browser. Dit zijn *HTML, CSS* en *Javascript*. 
 
+![](https://webexpresions.co.za/wp-content/uploads/2017/06/html-css-javascript.png)
+
 Inmiddels ben ik bijna volledig in staat mijn ideeën en schetsen om te zetten in werkzame code die het doet in de browser als alternatief van de prototyping tools. Ik kan nu makkelijk mijn website of app testen en mijn ideeën in een browser uitwerken inclusief animaties.
 
 Ik kreeg middels voorbeelden en instructies de opdracht om iedere twee weken een prototype op te leveren in deze repository. Dit zijn in totaal 3 opdrachten geworden. Welke ik middels *versioncontrol* met *Github* en een readme zo goed mogelijk heb geprobeerd te documenteren. 
