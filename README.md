@@ -21,9 +21,13 @@ Ik kreeg middels voorbeelden en instructies de opdracht om iedere twee weken een
 
 ## Overige info
 Naam: Danilo Merea
+
 Studnr.: 500712043
+
 Mail: [danilo.merea@hva.nl](mailto:danilo.merea@hva.nl)
+
 Klas: FFD herkansingsklas 1
+
 Docent: Koop Reynders
 
 
