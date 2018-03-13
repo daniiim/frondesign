@@ -1,7 +1,7 @@
 ## FFD Opdracht 1 & 2 - Kleurenfilter + Carousel
 *Use case - Als ik foto's zoek wil ik kunnen selecteren op kleur om verassende zoekresultaten te krijgen.*
 
-![header](header.jpg)
+![header](head.jpg)
 
 ## Gridview
 ### Hoe het werkt
