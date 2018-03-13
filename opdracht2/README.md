@@ -1,11 +1,35 @@
-# FFD - Opdracht 1; Kleurenfilter 
-*Use case; Als ik foto's zoek wil ik kunnen selecteren op kleur om verassende zoekresultaten te krijgen.*
+## FFD Opdracht 1 & 2 - Kleurenfilter + Carousel
+*Use case - Als ik foto's zoek wil ik kunnen selecteren op kleur om verassende zoekresultaten te krijgen.*
 
-![](https://webexpresions.co.za/wp-content/uploads/2017/06/html-css-javascript.png)
+## Filteren op kleur
+![start](#) ![dropdown](#) ![loader](#) ![filter](#)
+
+### Hoe het werkt
+
+### De code
+``` html
+html
+```
+
+``` css 
+css
+```
+
+``` javascript 
+javascript
+```
+
 
 ## Code en demo
-+ Code versies [hier](https://github.com/danilomerea/frondesign/tree/master/opdracht1)
-+ Live demo [hier](https://danilomerea.github.io/frondesign/opdracht1/v1.1/)
++ Code versies [hier](https://github.com/danilomerea/frondesign/tree/master/opdracht2/)
++ Live demo [hier](https://danilomerea.github.io/frondesign/opdracht2/v7/)
+  + Versie 1 [hier](https://danilomerea.github.io/frondesign/opdracht2/v1/)
+  + Versie 2 [hier](https://danilomerea.github.io/frondesign/opdracht2/v2/)
+  + Versie 3 [hier](https://danilomerea.github.io/frondesign/opdracht2/v3/)
+  + Versie 4 [hier](https://danilomerea.github.io/frondesign/opdracht2/v4/)
+  + Versie 5 [hier](https://danilomerea.github.io/frondesign/opdracht2/v5/)
+  + Versie 6 [hier](https://danilomerea.github.io/frondesign/opdracht2/v6/)
+
 
 
 ## Overige info
