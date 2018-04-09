@@ -1,0 +1,255 @@
+@montserrat-medium {
+   font-family: MontSerrat-Light;
+   src: url(/assets/fonts/Montserrat-Medium.ttf);
+}
+@montserrat {
+   font-family: MontSerrat;
+   src: url(/assets/fonts/Montserrat-Regular.ttf);
+}
+@montserrat-bold {
+   font-family: MontSerrat;
+   src: url(/assets/fonts/Montserrat-Bold.ttf);
+}
+body{
+    font-size: 11px;
+    font-family: MontSerrat-medium;
+    margin: 0;
+    padding: 0;  
+}
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: 500;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+    background-color: #FF9800;
+    margin-bottom: -35px;
+}
+header {
+    padding: 20px 20px 5px 20px;;
+    color: white;
+}
+header p {
+    margin-top: -10px;
+}
+ul {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    padding: 0px;
+    vertical-align: middle;
+}
+li {
+    padding: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.crypto li:first-child, .headlist li:first-child {
+    text-align: center;
+    width: 10px;
+}
+.crypto li:nth-child(2), .headlist li:nth-child(2) {
+    text-align: left;
+    width: 92px;
+}
+.crypto li:nth-child(3), .headlist li:nth-child(3) {
+    text-align: right;
+    width: 60px;
+}
+.crypto li:nth-child(4), .headlist li:nth-child(4) {
+    text-align: right;
+    width: 65px;
+    font-family: MontSerrat-bold;
+}
+.crypto li:nth-child(5) , .headlist li:nth-child(5) {
+    text-align: right;
+    width: 70px;
+    font-family: MontSerrat-bold;
+}
+.crypto li:nth-child(6), .headlist li:nth-child(6) {
+    text-align: center;
+    width: 15px;
+}
+.crypto li:nth-child(7), .headlist li:nth-child(7) {
+    text-align: center;
+    width: 10px;
+}
+.headlist li{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-family: MontSerrat-bold;
+    vertical-align: middle;
+    color: white;
+}
+.headlist {
+    background-color: #FF9800;
+    box-shadow: 0px 2px 7px -2px rgba(0, 0, 0, 0.15);
+    z-index: 999999;
+}
+.headlist .symbol {
+    padding-top: 0px;
+}
+.crypto {
+    border-bottom: 1px solid #ddd;
+}
+.symbol {
+    vertical-align: middle;
+    padding-top: 11px;
+    padding-bottom: 0px;
+    color: #000;
+    font-weight: 500;
+}
+.name {
+    margin-top: 3px;
+    color: #9ea6ae;
+    font-size: 10px;
+    font-family: MontSerrat-bold;
+}
+.rank {
+    color: #9ea6ae;
+    font-size: 10px;
+    font-family: MontSerrat-bold;
+}
+.capacity {
+    padding-right: 15px;
+}
+.rank {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.positive {
+    color: green;
+}
+.positive::before {
+    content: "▲ ";
+}
+.negative {
+    color: red;
+}
+.negative::before {
+    content: "▼ ";
+}
+.icon {
+    width: 12px;
+    padding-left: 5px;
+}
+.toggle img {
+    width: 10px;
+    margin-top: 5px;
+    font-size: 10px;
+}
+.toggle {
+    transform: rotate(0deg);
+}
+.toggle.rotate {
+    transform: rotate(180deg);
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+.scrolled {
+    margin-top: 75px;
+}
+.loader {
+    display: none;
+}
+.loader.active {
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+    color: #9ea6ae;
+    font-family: MontSerrat-bold;
+}
+.loader img{
+    width: 40px;
+}
+.detailed {
+    opacity: 0;
+    width: 100vw;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 0;
+    
+}
+.detailed.active {
+    opacity: 1;
+    padding-top: 20px;
+    height: 68px;
+    width: 100vw;
+    padding-bottom: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    
+}
+.back {
+    display: none;
+}
+.back.active {
+    display: block;
+    background-color: dimgrey;
+    opacity: 0.8;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 100;
+}
+.back:before {
+    content: '';
+    transform: rotate(180deg);
+    background:url('../assets/images/down.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    margin: -12.5px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    z-index: 200;
+}
+.detailed li {
+    color: #9ea6ae;
+}
+.detailed li:first-child {
+    width: 32%;
+    text-align: center;
+}
+.detailed li:nth-child(2) {
+    width: 32%;
+    text-align: center;
+}
+.detailed li:nth-child(3) {
+    width: 32%;
+    text-align: center;
+}
+.link {
+    width: 44%;
+    margin-left: 4%;
+    margin-right: 3%;
+    margin-top: 15px;
+    margin-bottom: -7px;
+    display: block;
+    padding: 10px 80px 10px 102px;
+    background-color: #B0BEC5;
+    color: white;
+    text-decoration: none;
+    font-family: MontSerrat-bold;
+}
+.link:hover {
+    opacity: 0.5;
+}
