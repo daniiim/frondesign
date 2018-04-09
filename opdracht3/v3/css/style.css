@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;  
+}
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+    margin-bottom: -35px;
+}
+header {
+    padding: 20px 20px 5px 20px;;
+}
+header p {
+    margin-top: -10px;
+}
+ul {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    padding: 0px;
+    vertical-align: middle;
+}
+li {
+    padding: 0px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.crypto li:first-child, .headlist li:first-child {
+    text-align: center;
+    width: 12px;
+}
+.crypto li:nth-child(2), .headlist li:nth-child(2) {
+    text-align: left;
+    width: 60px;
+}
+.crypto li:nth-child(3), .headlist li:nth-child(3) {
+    text-align: right;
+    width: 120px;
+}
+.crypto li:nth-child(4), .headlist li:nth-child(4) {
+    text-align: right;
+    width: 65px;
+
+}
+.crypto li:nth-child(5) , .headlist li:nth-child(5) {
+    text-align: right;
+    width: 75px;
+}
+.headlist li{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    vertical-align: middle;
+}
+.crypto {
+    border-bottom: 1px solid #ddd;
+}
+.symbol {
+    vertical-align: middle;
+}
+.rank {
+    padding-left: 10px;
+    padding-right: 10px;
+}
