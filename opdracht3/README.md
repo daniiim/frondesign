@@ -103,16 +103,83 @@ function showCryptos(jsonObj) {
 Om nog een beetje te spelen..
 
 #### 
-``` html 
-
-```
 
 ``` css 
+body{
+    margin: 0;
+    padding: 0;  
+}
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+    margin-bottom: -35px;
+}
+header {
+    padding: 20px 20px 5px 20px;;
+}
+header p {
+    margin-top: -10px;
+}
+.headlist li{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    vertical-align: middle;
+}
+.crypto {
+    border-bottom: 1px solid #ddd;
+}
+.symbol {
+    vertical-align: middle;
+}
+.rank {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 ```
 
 ``` javascript 
-
+for (var i = 0; i < crypto.length; i++) {
+        console.table(crypto[i]);
+          
+        var price = crypto[i].price_eur;
+        var cryptoList = crypto[i].rank;  
+        var coinList = document.querySelector('.coinlist');
+        var cryptoRank = document.createElement('li');
+        var cryptoSymbol = document.createElement('li');
+        var cryptoPrice = document.createElement('li');
+        var cryptoChange = document.createElement('li');
+        var cryptoCap = document.createElement('li');
+ 
+        cryptoRank.textContent = [i +1];
+        cryptoSymbol.innerHTML = crypto[i].symbol;
+        cryptoPrice.innerHTML = "€ " + price;
+        cryptoChange.innerHTML = crypto[i].percent_change_24h + "  %"; 
+        cryptoCap.innerHTML = crypto[i].percent_change_7d + "  %";
+        
+        for (var j = 0; j < cryptoList.length; j++) {
+            var listItem = document.createElement('ul');
+            coinList.appendChild(listItem);
+        };
+       
+        listItem.classList.add("crypto");
+        cryptoRank.classList.add("rank");
+        cryptoSymbol.classList.add("symbol");
+          
+        listItem.appendChild(cryptoRank);    
+        listItem.appendChild(cryptoSymbol);;
+        listItem.appendChild(cryptoPrice);
+        listItem.appendChild(cryptoChange);
+        listItem.appendChild(cryptoCap);
+                 
+    };
 ```
 
 ## iteratie 4->6  -  Fonts, sticky header, icons, kleuren, back to top
@@ -120,50 +187,83 @@ Om de interactie voor de gebruiker wat aangenamer te maken..
 
 ### Fonts
 #### 
-``` html 
-
-```
 
 ``` css 
-
+@montserrat-medium {
+   font-family: MontSerrat-Medium;
+   src: url(/assets/fonts/Montserrat-Medium.ttf);
+}
+@montserrat {
+   font-family: MontSerrat;
+   src: url(/assets/fonts/Montserrat-Regular.ttf);
+}
+@montserrat-bold {
+   font-family: MontSerrat-Bold;
+   src: url(/assets/fonts/Montserrat-Bold.ttf);
+}
+body{
+    font-size: 11px;
+    font-family: MontSerrat-medium;
+    margin: 0;
+    padding: 0;  
+}
 ```
 
-``` javascript 
-
-```
 ### sticky header
 #### 
-``` html 
-
-```
 
 ``` css 
-
+.header {
+    margin: 0;
+    padding: 0;
+    margin-top: -15px;
+    background-color: #FF9800;
+    margin-bottom: -35px;
+}
+header {
+    padding: 20px 20px 5px 20px;;
+    color: white;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+.scrolled {
+    margin-top: 75px;
+}
 ```
 
 ``` javascript 
-
+window.addEventListener('scroll', function() {    
+    var top = this.scrollY;
+    var tableHead = document.querySelector(".headlist");
+    var coinList = document.querySelector(".coinlist");
+    
+    if (top >= 75) {
+        tableHead.classList.add("sticky");
+        coinList.classList.add("scrolled");
+      
+        } else {
+            tableHead.classList.remove("sticky");
+            coinList.classList.remove("scrolled");
+        }
+});
 ```
 
 ### icons
 #### 
-``` html 
 
-```
-
-``` css 
-
-```
-
-``` javascript 
+``` javascript
+var image = new Image();
+image.src = "/assets/images/icons/" +crypto[i].symbol+ ".png"; 
+cryptoSymbol.appendChild(image);
 
 ```
 
 ### kleuren
 #### 
-``` html 
-
-```
 
 ``` css 
 
