@@ -42,26 +42,27 @@ Om te ontdekken hoe het werkt..
         </main>
 ```
 
-``` css 
-ul {
-    width: 100%;
-    border-collapse: collapse;
-    padding: 0px;
-}
-li {
-    display: inline-block;
-}
-li:first-child, .headlist li:first-child {
-    width: 15%;
-}
-li:nth-child(2), .headlist li:nth-child(2) {
-    width: 19%;
-}
-li:nth-child(3), .headlist li:nth-child(3) {
-    width: 37%;
-}
-li:nth-child(4), .headlist li:nth-child(4) {
-    width: 25%;
+``` json 
+{
+        "id": "bitcoin", 
+        "name": "Bitcoin", 
+        "symbol": "BTC", 
+        "rank": "1", 
+        "price_usd": "6755.91", 
+        "price_btc": "1.0", 
+        "24h_volume_usd": "4663730000.0", 
+        "market_cap_usd": "114640361199", 
+        "available_supply": "16968900.0", 
+        "total_supply": "16968900.0", 
+        "max_supply": "21000000.0", 
+        "percent_change_1h": "0.49", 
+        "percent_change_24h": "-4.33", 
+        "percent_change_7d": "-8.43", 
+        "last_updated": "1523353466", 
+        "price_eur": "5484.02887158", 
+        "24h_volume_eur": "3785726862.74", 
+        "market_cap_eur": "93057937519.0"
+    }, 
 
 ```
 
