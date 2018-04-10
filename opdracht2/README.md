@@ -28,8 +28,6 @@
 ## Opdracht 2 - Carousel
 ![](#)
 ### iteratie 1  -  slide met arrows 
-
-![header](https://danilomerea.github.io/frondesign/opdracht2/assets/b.gif)
 Omdat meest standaard interactie en click event al eerder gebruikt.
 
 #### 
@@ -110,7 +108,6 @@ vorige.addEventListener('click', function () {
 ```
 
 ### iteratie 2->4  -  slide met swipe
-![header](https://danilomerea.github.io/frondesign/opdracht2/assets/c.gif)
 Omdat de gebruiker van een touch device dit toch wel verwacht te kunnen doen.
 
 #### 
@@ -142,7 +139,6 @@ swipen.addEventListener('touchend', function(detect){
 ```
 
 ### iteratie 5 & 6  -  slide toetsen
-![header](https://danilomerea.github.io/frondesign/opdracht2/assets/d.gif)
 Omdat ik een extra interactie wilde proberen.
 
 #### 
