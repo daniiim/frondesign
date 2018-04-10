@@ -59,7 +59,7 @@ function showCryptos(jsonObj) {
 
         // plaatst content of functie in domelement    
         image.src = "../assets/images/icons/" +crypto[i].symbol+ ".png";
-        down.src = "../assets/images/down.png";   
+        down.src = "https://danilomerea.github.io/frondesign/opdracht3/v9/assets/images/down.png";   
         cryptoRank.textContent = [i +1];
         cryptoName.innerHTML = crypto[i].name;
         cryptoSymbol.innerHTML = crypto[i].symbol;
