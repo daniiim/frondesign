@@ -19,7 +19,7 @@ Ik kreeg middels voorbeelden en instructies de opdracht om iedere twee weken een
 ## Live demo's
 + Opdracht 1 [hier](https://danilomerea.github.io/frondesign/opdracht1/v1.1/)
 + Opdracht 2 [hier](https://danilomerea.github.io/frondesign/opdracht2/v7/)
-+ Opdracht 3 [hier](https://danilomerea.github.io/frondesign/opdracht3/../)
++ Opdracht 3 [hier](https://danilomerea.github.io/frondesign/opdracht3/v9/)
 
 ## Overige info
 Naam: Danilo Merea
