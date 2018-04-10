@@ -107,7 +107,7 @@ vorige.addEventListener('click', function () {
 });
 ```
 
-### iteratie 2->4  -  slide met swipe 
+### iteratie 2->4  -  slide met swipe
 Omdat de gebruiker van een touch device dit toch wel verwacht te kunnen doen.
 
 #### 
