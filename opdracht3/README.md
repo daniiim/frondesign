@@ -10,7 +10,7 @@ Om te controleren of ik data binnen kreeg..
 
 #### 
 ``` js
-        var requestURL = 'https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=20';
+var requestURL = 'https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=20';
 var request = new XMLHttpRequest(); 
 
 request.open('GET', requestURL);
@@ -28,15 +28,74 @@ Om te ontdekken hoe het werkt..
 
 #### 
 ``` html 
-
+ <main>
+            <div class="headlist">
+                <ul>
+                    <li>#</li>
+                    <li>Naam</li>
+                    <li>Prijs</li>
+                    <li>Dag</li>
+                </ul>
+            </div>
+            <div class="coinlist">
+            </div>
+        </main>
 ```
 
 ``` css 
+ul {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0px;
+}
+li {
+    display: inline-block;
+}
+li:first-child, .headlist li:first-child {
+    width: 15%;
+}
+li:nth-child(2), .headlist li:nth-child(2) {
+    width: 19%;
+}
+li:nth-child(3), .headlist li:nth-child(3) {
+    width: 37%;
+}
+li:nth-child(4), .headlist li:nth-child(4) {
+    width: 25%;
 
 ```
 
 ``` javascript 
+function showCryptos(jsonObj) {
+    var crypto = jsonObj;
 
+        for (var i = 0; i < crypto.length; i++) {
+        console.table(crypto[i]);
+          
+        var cryptoList = crypto[i].rank;  
+        var coinList = document.querySelector('.coinlist');
+        var cryptoRank = document.createElement('li');
+        var cryptoSymbol = document.createElement('li');
+        var cryptoPrice = document.createElement('li');
+        var cryptoChange = document.createElement('li');
+ 
+        cryptoRank.textContent = [i +1];
+        cryptoSymbol.innerHTML = crypto[i].symbol;
+        cryptoPrice.innerHTML = crypto[i].price_eur;
+        cryptoChange.innerHTML = crypto[i].percent_change_24h; 
+        
+        for (var j = 0; j < cryptoList.length; j++) {
+            var listItem = document.createElement('ul');
+            coinList.appendChild(listItem);
+        };
+          
+        listItem.appendChild(cryptoRank);    
+        listItem.appendChild(cryptoSymbol);;
+        listItem.appendChild(cryptoPrice);
+        listItem.appendChild(cryptoChange);
+                 
+    };
+};
 ```
 
 ## iteratie 3  -  Meer elementen met API data in lists + styling
