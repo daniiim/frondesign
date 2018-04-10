@@ -3,6 +3,27 @@
 
 ![header](https://danilomerea.github.io/frondesign/opdracht2/assets/a.jpg)
 
+#### 
+``` html
+        <div class="container slider">
+            <div class="swipe">
+                <ul class="slideshow">
+                    <li class="slide show">
+                        <img src="">
+                        <p class="indicator">1 / 3</p>
+                    </li>
+                    <li class="slide">
+                        <img src="">
+                        <p class="indicator">2 / 3</p>
+                    </li>
+                    <li class="slide">
+                        <img src="">
+                        <p class="indicator">3 / 3</p>
+                    </li>
+                </ul>
+            </div>
+```
+
 ## Opdracht 2 - Carousel
 ![](#)
 ### iteratie 1  -  slide met arrows 
