@@ -142,16 +142,18 @@ swipen.addEventListener('touchend', function(detect){
 Omdat ik een extra interactie wilde proberen.
 
 #### 
-``` html
-html
-```
-
-``` css 
-css
-```
-
 ``` javascript 
-js
+window.addEventListener("keydown", function (event) {
+  switch (event.key) {
+    case "ArrowLeft":
+      vorigeSlide();
+          
+      break;
+    case "ArrowRight":
+      volgendeSlide();
+      break;
+  };
+});
 ```
 
 ### iteratie 7  -  opdracht 1 geimplementeerd
@@ -162,7 +164,7 @@ Om het helemaal compleet te maken en een context te geven.
 html
 ```
 
-``` css 
+``` css
 css
 ```
 
