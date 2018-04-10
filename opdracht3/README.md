@@ -266,25 +266,94 @@ cryptoSymbol.appendChild(image);
 #### 
 
 ``` css 
-
+.positive {
+    color: green;
+}
+.positive::before {
+    content: "▲ ";
+}
+.negative {
+    color: red;
+}
+.negative::before {
+    content: "▼ ";
+}
 ```
 
 ``` javascript 
-
+if (crypto[i].percent_change_24h > 0) {
+            cryptoChange.classList.add("positive");
+            } else if (crypto[i].percent_change_24h < 0) {
+                cryptoChange.classList.add("negative");
+                } else {
+                    cryptoChange.classList.add("neutral");
+                }
+        
+        if (crypto[i].percent_change_7d > 0) {
+            cryptoCap.classList.add("positive");
+            } else if (crypto[i].percent_change_7d < 0) {
+                cryptoCap.classList.add("negative");
+                } else {
+                    cryptoCap.classList.add("neutral");
+                }
 ```
 
 ### back to top
 #### 
 ``` html 
-
+    <footer>
+        <div class="back">
+        </div>
+    </footer>
 ```
 
 ``` css 
-
+.back {
+    display: none;
+}
+.back.active {
+    display: block;
+    background-color: dimgrey;
+    opacity: 0.8;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 100;
+}
+.back:before {
+    content: '';
+    transform: rotate(180deg);
+    background:url('../assets/images/down.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    margin: -12.5px;
+    width: 35px;
+    height: 35px;
+    display: block;
+    z-index: 200;
+}
 ```
 
 ``` javascript 
+// Top button appear
+window.addEventListener('scroll', function() {
+    var scrolled = this.scrollY;
+    var backButton = document.querySelector(".back");
+    
+    if (scrolled >= 350) {
+        backButton.classList.add("active");
+        } else {
+            backButton.classList.remove("active");
+        }
+});
 
+// Scroll to top
+var back = document.querySelector(".back");
+    back.addEventListener('click',function(){
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    });
 ```
 
 ## iteratie 7 & 8  -  dropdown info (pijltje klikken) + afkorting getallen
