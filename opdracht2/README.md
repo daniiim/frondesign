@@ -28,7 +28,7 @@
 ## Opdracht 2 - Carousel
 ![](#)
 ### iteratie 1  -  slide met arrows 
-Hier uitleggen.. omdat meest standaard interactie en click event al eerder gebruikt.
+Omdat meest standaard interactie en click event al eerder gebruikt.
 
 #### 
 ``` html
@@ -108,23 +108,38 @@ vorige.addEventListener('click', function () {
 ```
 
 ### iteratie 2->4  -  slide met swipe 
-Hier uitleggen.. omdat de gebruiker van een touch device dit toch wel verwacht te kunnen doen.
+Omdat de gebruiker van een touch device dit toch wel verwacht te kunnen doen.
 
 #### 
-``` html
-html
-```
-
 ``` css 
-css
+.swipe {
+  text-align: center;
+  background: #GFF;
+  color: grey;
+  cursor: pointer;
+  font-size: 30px;
+}
 ```
 
 ``` javascript 
-js
+swipen.addEventListener('touchstart', function(detect){
+    var touch = detect.changedTouches[0]
+        dist = 0
+        startX = touch.pageX
+});
+  
+// detectie afstand x bij touch eind, groter of kleiner dan 0
+swipen.addEventListener('touchend', function(detect){
+    var touch = detect.changedTouches[0]
+        afstandX = touch.pageX - startX
+    if (Math.abs(afstandX) > 0){
+        swipedirection = (afstandX < 0)? volgendeSlide() : vorigeSlide();
+    }
+});
 ```
 
 ### iteratie 5 & 6  -  slide toetsen
-Hier uitleggen.. Omdat ik een extra interactie wilde proberen.
+Omdat ik een extra interactie wilde proberen.
 
 #### 
 ``` html
@@ -140,7 +155,7 @@ js
 ```
 
 ### iteratie 7  -  opdracht 1 geimplementeerd
-Hier uitleggen.. Om het helemaal compleet te maken en context te geven.
+Om het helemaal compleet te maken en een context te geven.
 
 #### 
 ``` html
