@@ -21,7 +21,8 @@
                         <p class="indicator">3 / 3</p>
                     </li>
                 </ul>
-            </div>
+             </div>
+        </div>
 ```
 
 ## Opdracht 2 - Carousel
@@ -31,15 +32,79 @@ Hier uitleggen.. omdat meest standaard interactie en click event al eerder gebru
 
 #### 
 ``` html
-html
+        <div class="controls">
+                <button class="control previous">&lt;</button>
+                <button class="control next">&gt;</button>
+        </div>
 ```
 
 ``` css 
-css
+.control{
+    display: inline-block;
+    background: lightgrey;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 17px;
+    cursor: pointer;
+    margin: 10px 0px 0px 10px;
+    opacity: 0.6;
+    border-radius: 2px;
+}
+
+.control:hover,
+.control:focus{
+    background: #eee;
+    color: #333;
+}
+
+.previous {
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    z-index: 10;
+}
+.next {
+    position: absolute;
+    right: 19px;
+    top: 100px;
+    z-index: 10;
+}
+
+.indicator {
+    position: absolute;
+    z-index: 9;
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+    top: 0px;
+    right: 10px;
+}
 ```
 
 ``` javascript 
-js
+function volgendeSlide() {
+	gaSlide(huidigeSlide + 1);
+}
+ 
+function vorigeSlide() {
+	gaSlide(huidigeSlide - 1);
+}
+
+function gaSlide(n) {
+	slides[huidigeSlide].className = 'slide';
+	huidigeSlide = (n + slides.length) % slides.length;
+	slides[huidigeSlide].className = 'slide show';
+}
+
+// click
+volgende.addEventListener('click', function () {
+    volgendeSlide();
+});
+ 
+vorige.addEventListener('click', function () {
+    vorigeSlide();
+});
 ```
 
 ### iteratie 2->4  -  slide met swipe 
