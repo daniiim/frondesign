@@ -1,6 +1,6 @@
 # FFD Live cryptocurrency checker voor iPhone 6/6s/7/X (API)
-*Use case - Ik wil mobiel snel de crypto koersen checken in het Nederlands en Euro.*
-*(download de map voor beste weergave)*
+*Use case - Ik wil mobiel snel de crypto koersen checken in het NLD en Euro.*
+*(download voor beste weergave)*
 
 ![header](https://danilomerea.github.io/frondesign/opdracht3/assets/a.jpg)
 
