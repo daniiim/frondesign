@@ -159,18 +159,7 @@ window.addEventListener("keydown", function (event) {
 ### iteratie 7  -  opdracht 1 geimplementeerd
 Om het helemaal compleet te maken en een context te geven.
 
-#### 
-``` html
-html
-```
-
-``` css
-css
-```
-
-``` javascript 
-js
-```
++ Code opdracht 1; [hier](https://github.com/danilomerea/frondesign/tree/master/opdracht1)
 
 ## Code en demo
 + Demo; [hier](https://danilomerea.github.io/frondesign/opdracht2/v7/)
