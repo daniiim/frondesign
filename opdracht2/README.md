@@ -1,7 +1,7 @@
 # FFD Kleurenfilter + Carousel
 *Use case - Als ik foto's zoek wil ik kunnen selecteren op kleur om verassende zoekresultaten te krijgen.*
 
-![header](/assets/a.jpg)
+![header](https://danilomerea.github.io/frondesign/opdracht2/assets/a.jpg)
 
 ## Opdracht 2 - Carousel
 ![](#)
