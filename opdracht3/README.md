@@ -361,47 +361,104 @@ Omdat de gebruiker soms toch wat meer wilt weten, maar in eerste oogopslag niet.
 
 ### Dropdown
 #### 
-``` html 
-
-```
 
 ``` css 
+.toggle img {
+    width: 10px;
+    margin-top: 5px;
+    font-size: 10px;
+}
+.toggle {
+    transform: rotate(0deg);
+}
+.toggle.rotate {
+    transform: rotate(180deg);
+}
 
+.detailed {
+    opacity: 0;
+    width: 100vw;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 0;
+    
+}
+.detailed.active {
+    opacity: 1;
+    padding-top: 20px;
+    height: 68px;
+    width: 100vw;
+    padding-bottom: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    
+}
 ```
 
 ``` javascript 
-
+var toggle = document.querySelectorAll('.toggle');       
+        for (var i = 0; i < toggle.length; i++){
+            toggle[i].addEventListener('click', function(li){
+                li.preventDefault();
+                toggle.forEach(function(el){
+                    el.querySelector('.detailed').classList.remove('active');
+                    el.querySelector('.toggle').classList.remove('rotate');
+                });
+                li.currentTarget.querySelector('.detailed').classList.add('active');
+                li.currentTarget.querySelector('.toggle').classList.add('rotate');
+            });
+        } 
 ```
 
 ### Getallen afkorten
 #### 
-``` html 
-
-```
-
-``` css 
-
-```
 
 ``` javascript 
-
+    var euro = Math.round(price*100)/100;
+    var cap = crypto[i].market_cap_eur;
+    var billion = Math.round(cap*1000)/1000000;
+    var million = Math.round(cap*1000)/1000;
+    var thousand = Math.round(cap*1000)/10;
+        
+    if (crypto[i].market_cap_eur > 999999999) {
+        sub3.innerHTML = crypto[i].symbol + " markt: <br>\n" + "€ " + valuta(Math.round(billion)/1000000) + " mjrd";
+        } else if (crypto[i].market_cap_eur < 999999) {
+            sub3.innerHTML = crypto[i].symbol + " markt: <br>\n" + "€ " + valuta(Math.round(thousand)/1000000) + " k";
+            } else {
+                sub3.innerHTML = crypto[i].symbol + " markt: <br>\n" + "€ " + valuta(Math.round(million)/1000000) + " mln";
+                }
 ```
 
 ## iteratie 9  -  Dropdown op hele lijstelement + animaties toegepast
 Omdat de gebruiker makkelijker moet kunnen interacteren en ook graag feedback ontvangt..
 
-### Dropdown
 #### 
-``` html 
-
-```
 
 ``` css 
-
+.detailed.active {
+    transition: all 0.3s ease; 
+}
+.toggle.rotate {
+    transition: all 0.3s ease;
+}
+.sticky {
+  transition: all 1s;
+}
 ```
 
 ``` javascript 
-
+var list = document.querySelectorAll('.crypto');       
+        for (var i = 0; i < list.length; i++){
+            list[i].addEventListener('click', function(li){
+                li.preventDefault();
+                list.forEach(function(el){
+                    el.querySelector('.detailed').classList.remove('active');
+                    el.querySelector('.toggle').classList.remove('rotate');
+                });
+                li.currentTarget.querySelector('.detailed').classList.add('active');
+                li.currentTarget.querySelector('.toggle').classList.add('rotate');
+            });
+        } 
 ```
 
 
