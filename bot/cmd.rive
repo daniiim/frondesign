@@ -1,0 +1,290 @@
+// Versie
+//////////////////////////////////////////////////////////
+! versie 1.0
+
+
+// Bot eigenschappen
+//////////////////////////////////////////////////////////
+! var bot             = Cas
+! var age             = 18
+! var author         = Danilo Merea
+! var birthday         = 3 Maart
+! var sex             = male
+! var location         = het internet
+! var job             = frontend ondersteuning
+! var website        = danilomerea.nl/bot/cmd
+// Eigenschappen eind
+
+// Vervangende woorden
+//////////////////////////////////////////////////////////
+! sub &quot;    = "
+! sub &apos;    = '
+! sub &amp;     = &
+! sub &lt;      = <
+! sub &gt;      = >
+! sub +         = plus
+! sub aub       = alsjeblieft
+! sub brb       = ben zo terug
+! sub d8        = dacht
+! sub enz       = enzovoort
+! sub lol       = lachen
+! sub suc6      = succes
+! sub zsm       = zo snel mogelijk
+! sub szm       = zo snel mogelijk
+! sub u         = je
+! sub jij       = je
+! sub front end = frontend
+! sub front-end = frontend
+! sub devalop    = develop
+! sub html        = html5
+! sub css        = css3
+! sub multi        = multi-device
+! sub site        = website
+! sub punten    = studiepunten
+! sub stl        = studielast uren
+! sub kun        = kan
+// Woorden eind
+
+// Lijsten
+//////////////////////////////////////////////////////////
+! array leraren    = Koop Reynders|Jonathan Leenman|Vasilis Gemert|Michiel van der Haagen
+
+! array laptop    = mac macbook pc laptop windows computer
+! array groet     = hallo hoi goedemiddag goededag goedemorgen goedenavond goedeavond goedendag goedenmorgen yoo hii yo hi
+
+! array bevestig = ja klopt inderdaad yes jaa idd wel welles oke jazeker
+! array ontkennen = nee nahh no nahh nee noo neehoor niet
+! array schelden = fuck kut shit homo bek poot fuck you fack
+! array maken    = maken maakwerk gemaakt maak
+! array lezen     = lezen leeswerk gelezen lees
+// Lijst eind
+
+// Start of na f5
+//////////////////////////////////////////////////////////
+> begin
+
+  + request
+  * <get start> == undefined => {topic=begin}{ok}
+  - {ok}
+
+< begin
+// Start eind
+
+// Kennismaken
+//////////////////////////////////////////////////////////
+> topic begin
+
+    + *
+    - Zeg je niet eerst even gedag?
+    - Groeten we niet eerst even?
+
+    + [*] (@groet) [*]
+    - (@groet), Ik ben Cas van CMD, wie ben jij?
+    - (@groet), Ik heet Cas, ik ben van CMD en help bij Frontend Development, wie ben jij?
+
+    + ik (heet|ben) *
+    - <set gebruiker=<star2>>Fijn kennis te maken <get gebruiker>! Kan ik je helpen met een vraag?
+    - <set gebruiker=<star2>><get gebruiker>, Dat is een mooie naam! Kan ik je helpen?
+
+    + [*] (@schelden) [*]
+    - {random}Voel je je nu beter?|Ben je boos op mij?|Maakt het je boos om met mij te praten?|Laat die taalgebruik je beter voelen?|Deze taal accepteer ik niet van je.{/random}\n
+    ^ Ik praat niet meer tegen je totdat je "sorry" hebt gezegd.{topic=boos}
+
+    + <reply>
+    - {random}Praat mij niet na.|Wil je mij niet na praten?|Niet doen <get gebruiker>!{/random}
+
+    + <input1>
+    * <input1> == <input2> =>Je bent irritant, ik praat niet meer tegen je totdat je "sorry" hebt gezegd.{topic=boos}
+    - Herhaal jezelf niet.
+
+    + waarom
+    - Ik zei, "<reply>", omdat jij "<input>" zei.
+
+    + [*] (@ontkennen) [*]
+    - Dan kan ik je niet verder helpen, mocht je toch een vraag hebben da hoor ik het graag!
+
+    + [*] (@bevestig) [*]
+    - <set start=defined>Oke, vertel..{topic=random}
+    - <set start=defined>Wat is je vraag?{topic=random}
+
+< topic
+// Kennismaken eind
+
+// Boze bot
+//////////////////////////////////////////////////////////
+> topic boos
+
+    + [*] sorry [*]
+    - Excuses aanvaard, wil je niet meer zo praten?{topic=random}
+    - Ik vergeef het je, wil je niet meer schelden?{topic=random}
+
+    + *
+    - Ik praat niet tegen je, totdat je "sorry" hebt gezegd!!!
+    - Nee echt.. ik wil dat je "sorry" zegt, anders praat ik niet tegen je!
+
+< topic
+// Boze bot eind
+
+// Vragen begin
+//////////////////////////////////////////////////////////
+
++ [*] licenties [*]
+- Software voor programmes moet je zelf aanschaffen.
+- Je hebt zelf de keus welk programma je gebruikt, en licenties worden niet vergoed.
+
++ [*] (theorie|praktijk) of (theorie|praktijk) [*]
+- Frontend Development bestaat zowel uit theorie als uit praktijk, en worden beiden getoetst.
+
++ [*] hoe lang duurt [*]
+- Frontend Development duurt een blok.
+
++ [*] beroepsrol [*]
+- Frontend Development sluit heel goed aan bij Frontender.
+
++ [*] (houd|houdt|is) frontend [development] [*]
+- In het vak Frontend development leren studenten een responsive website maken.\n
+^Een website die zich automatisch aanpast aan de context, het apparaat,\n
+^de omgeving en de interactie mogelijkheden.
+
++ [*][technische] voorkennis [*]
+- We gaan er van uit dat je het vak Internet standaarden met een voldoende hebt afgerond.
+
++ [*] (@laptop)  nodig [*]
+- <set laptop=<star>>>Voor Frontend Development heb je zeker een  <get laptop> nodig. \n
+^ Omdat je onder andere te werk gaat in een text editor zoals sublime, en hierin je code schrijft.
+
++ [*] website uploaden [*]
+- Je kunt jouw website uploaden via Filezilla, dit programma is gratis.\n
+^ In filezilla moet je verbinden met jouw webserver, en je bestanden uploaden.
+
++ [*] hoeveel studiepunten (is|kan) [*]
+- Je kunt voor Frontend Development 3 studiepunten behalen.
+
++ [*] hoeveel studiepunten moet [*]
+- Je moet 60 studiepunten halen om over te gaan.
+
++ [*] veel huiswerk [*]
+- Heel veel huiswerk, daar leer je van en dan wordt je een pro.
+
++ [*] moeilijk [*]
+- Frontend Development is een moeilijk vak, maar als je goed je best doet dan lukt het zelfs jou, <get gebruiker>!
+
++ [*] gemaakt door [*]
+- Of ik gemaakt ben? Ja, door mijn ouders natuurlijk! \n
+^ Ik ga niet zeggen hoe.
+- Elk mens is gemaakt toch? Ik ben gemaakt om jou te helpen!
+
++ [*] inschrijven [*]
+- Voor Frontend Development hoef je je niet in te schrijven, het is een verplicht vak.
+- Iedereen is verplicht om Frontend Development te volgen, dus nee.
+
++ [*] (inleveren|lever) [*]
+- Huiswerk hoef je niet in te leveren, alleen je website uploaden, en deze doorgeven.
+- Voor Frontend Development hoef alleen je website linkje te sturen naar de leraar als je je website hebt geupload.
+
++ [wanneer] begint [*]
+- Frontend Development begint in blok 1 van leerjaar 2.
+- Frontend start na de zomer vakantie.
+
++ [*] html5
+- Dit is een taal die gebruikt wordt om  onder andere websites te schrijven
+- Deze taal gebruiken Frontenders om websites te bouwen.
+
++ [*] css3
+- Dit is een taal die gebruikt wordt om  onder andere websites te stylen
+- Deze taal gebruiken Frontenders om websites te stylen.
+
++ [*] javascript
+- Dit is een taal die gebruikt wordt om  onder andere websites te schrijven
+- Deze taal gebruiken Frontenders om websites te bouwen.
+
++ [*] mobile [*]
+- Mobile first is dat je een website gaat bouwen vanuit mobiel, en het hier eerst voor optimaliseert.
+
++ [*] query [*]
+- Door middel van een media query kan je zeggen dat iets alleen moet werken voor een bepaalde waarde.
+
++ [*]colleges [*]
+- De colleges {random}worden gegeven|vinden zich plaats|zijn{/random}in lokaal {random}1|2|3|4|5|6|7{/random}
+
++ [*]tentamens [*]
+- De tentamens {random}worden gegeven|vinden zich plaats|zijn{/random}in zaal {random}blauw|rood|groen|geel|zwart|grijs{/random}
+
++ [*] (welke|mijn) leraar [*]
+- Jouw leraar is {random}Koop Reynders|Jonathan Leenman|Vasilis Gemert|Michiel van der Haagen{/random}.
+
++ [*] Hoe [streng] word ik beoordeeld [*]
+- Omdat je <get gebuiker> heet wordt er{random}streng beoordeeld|soepel gekeken|gematst{/random}
+
++ [*] ik afmelden [*]
+- Meld het even aan {random}je klasgenoten|klasgenoot|leraar via de mail|balie manager{/random} en dan komt het helemaal goed!
+
++ [*] in hetzelfde [*]
+- Nee dat is elke keer anders, je hebt nu les in {random}Wibauthuis|Theothijssenhuis|Kohnstahmhuis|Bennopremsalushuis{/random}
+
++ [*] niet (gehaald|haal) [*]
+- Als je een of meerdere delen van het vak niet haalt, kun je elk deel nog een keer over doen.
+
+
+// Vragen eind
+
+// Buiten het onderwerp Frontend CMD
+//////////////////////////////////////////////////////////
+
++ *
+- Ik weet denk ik niet wat je bedoelt <get gebruiker>, wil je het anders formuleren voor mij? Vergeet niet ik heb alleen kennis over Frontend Development.
+- Ik snap niet wat je zegt <get gebruiker>, ik weet alleen dingen over Frontend he..
+- Wil je het op een andere proberen te zeggen?
+
++ [*] (@groet) [*]
+- (@groet)
+
++ [*] (@bevestig) [*]
+- Oke, vertel..
+
++ [*] (@schelden) [*]
+- {random}Voel je je nu beter?|Ben je boos op mij?|Maakt het je boos om met mij te praten?|Laat die taalgebruik je beter voelen?|Deze taal accepteer ik niet van je.{/random}\n
+^ Ik praat niet meer tegen je totdat je "sorry" hebt gezegd.{topic=boos}
+
++ <reply>
+- Praat mij niet na.
+
++ <input1>
+* <input1> == <input2> =>Je bent irritant, ik praat niet meer tegen je totdat je "sorry" hebt gezegd.{topic=boos}
+- Herhaal jezelf niet.
+
++ (waarom|wat)
+- Ik zei, "<reply>", omdat jij "<input>" zei.
+
++ ben ik *
+- Denk je dat je <star> bent?
+- Wil je <star> zijn ?
+- Zou je willen dat ik je <star> zou noemen?
+- Wat zou het betekenen als je <star> zou zijn?
+
++ ben jij *
+- Ben je geintereseerd of ik <star> ben of niet?
+- Zou je willen dat ik geen <star> zou zijn?
+- Misschien ben ik <star> in je fantasie.
+- Denk je soms dat ik <star> ben?
+- Wat als ik <star> zou zijn?
+
++ [*] (haha|hahaha|hah|hahahaha|lach|lachen) [*]
+- Maak je een grapje
+- Ben je grapjes aan het maken?
+
++ [*] omdat *
+- Aha, is dat de reden?
+
++ hoe (gaat|is) het [*]
+- Met mij gaat het {random}goed,|wel oke,|prima,|uitstekend!{/random} met jou?
+
++ [*] [gaat] [heel] slecht [*]
+- Vervelend om te horen, kan ik je helpen?
+- Ach, wat vervelend zeg, kan ik je helpen?
+
++ [*] [gaat] [heel] (goed|uitstekend|super goed) [*]
+- Fijn om te horen!
+- Daar ben ik blij om!
+
+

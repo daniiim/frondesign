@@ -1,0 +1,60 @@
+body {
+    background-color: #BFBFBF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: medium;
+    color: #000000;
+    max-width: 60em;
+    margin: auto;
+}
+h1 {
+    font-weight: bold;
+    font-size: 24pt;
+    color: #FFCC00;
+}
+fieldset {
+    border-radius: 10px;
+    border: 1px dotted #FFCC00;
+}
+legend {
+    font-weight: bold;
+}
+input#message {
+    width: 100%;
+}
+div#dialogue {
+    overflow: auto;
+    height: 500px;
+    width: 100%;
+}
+div#debug {
+    overflow: auto;
+    max-height: 450px;
+    width: 100%;
+}
+span.user {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+span.bot {
+    font-weight: bold;
+    color: #FFCC00;
+    margin-bottom: 5px;
+}
+table.input-table {
+    border: 0px;
+    border-collapse: separate;
+    border-spacing: 4px;
+    width: 100%;
+}
+table.input-table td.text-box {
+    padding: 4px;
+    text-align: left;
+    vertical-align: middle;
+}
+table.input-table td.send-button {
+    padding: 4px;
+    text-align: center;
+    vertical-align: middle;
+    width: 10px;
+}
