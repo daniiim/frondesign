@@ -1,0 +1,207 @@
+! versie 1.0
+
+
+// Bot variabelen
+! var bot             = Tycho
+! var age             = Privé
+! var author         = Danilo Merea
+! var birthday         = 2 Maart
+! var sex             = male
+! var location         = internet
+! var job             = robot
+! var website        = danilomerea.nl/taxi
+
+
+// Vervangende woorden
+// Substitutions
+! sub &quot;    = "
+! sub &apos;    = '
+! sub &amp;     = &
+! sub &lt;      = <
+! sub &gt;      = >
+! sub +         = plus
+! sub aub       = alsjeblieft
+! sub brb       = ben zo terug
+! sub d8        = dacht
+! sub enz       = enzovoort
+! sub lol       = lachen
+! sub suc6      = succes
+! sub zsm        = zo snel mogelijk
+! sub u         = je
+! sub jij       = je
+! sub gf        = girlfriend
+! sub g/f       = girlfriend
+! sub bf        = boyfriend
+! sub b/f       = boyfriend
+! sub bff         = best friend forever
+! sub :-)       = lach
+! sub :)        = lach
+! sub :d        = tong
+! sub :-d       = tong
+! sub :-p       = tong
+! sub :p        = tong
+! sub ;-)       = knipoog
+! sub ;)        = knipoog
+! sub :-(       = droevig
+! sub :(        = droevig
+! sub :'(       = huilen
+! sub :-[       = verlegen
+! sub 8-)       = cool
+! sub 8)        = cool
+! sub :-*       = duckface
+! sub :-!       = voet
+! sub o:-)      = engel
+! sub >:o       = boos
+! sub :@        = boos
+! sub 8o|       = boos
+! sub :$        = bloos
+! sub :-$       = bloos
+! sub :-[       = bloos
+! sub :[        = fleermuis
+! sub (a)       = engel
+! sub (h)       = cool
+! sub 8-|       = nerdy
+! sub |-)       = moe
+
+! array autos     = tesla jaguar mercedes ford
+! array tijden    =    1uur 2uur 3uur 4uur 5 uur 6uur 7uur 8uur
+^ 9uur 10uur 11uur 12uur
+^ 07:00 | 08:00 | 09:00 | 10:00 | 11:00 | 12:00 |
+^ 1 uur | 2 uur | 3 uur | 4 uur | 5 uur | 6 uur | 7 uur | 8 uur | 9 uur | 10 uur | 11 uur | 12 uur |
+
+> begin
+
+  + request
+  * <get begin> == undefined => {topic=begin}{ok}
+  - {ok}
+
+< begin
+
+> topic begin
+    + [*] (hallo|hoi|goedemiddag|goededag|goedemorgen|goedenavond) [*] [<bot name>]
+    - Hallo, ik ben Tycho.\s
+    ^ Bij mij kun je een taxi boeken door heel Nederland\s
+    ^ Wat is je probleem?
+
+    + *
+    - Heb je een taxi nodig?
+
+    + [*] (ja|klopt|dat klopt|inderdaad) [*]
+    - <set begin=defined>Oke, naar welke stad?{topic=random}
+
+    + nee [*]
+    - Dan kan ik je niet verder helpen, mocht je toch een taxi nodig hebben hoor ik het graag!
+
+< topic
+
++ *
+- Ik begrijp je niet, waar kan ik je bij helpen? {weight=50}
+- Ik begrijp niet wat je bedoelt? {weight=10}
+- Ik begrijp je niet helemaal.. Vergeet niet, ik ben maar een taxi service! {weight=30}
+- We dwalen een beetje af, kan ik je helpen bij het vinden van een taxi?.. {weight=10}
+
+// TOPIC TOEVOEGEN
++ [*] (fuck|kut|shit|homo|bek|poot|fuck you|fack|boos|verdrietig|droevig) [*]
+- {random}Voel je je nu beter?|Ben je boos op mij?|Maakt het je boos om met mij te praten?|Laat die taalgebruik je beter voelen?|Deze taal accepteer ik niet van je.{/random}
+
++ [*] computer [*]
+- Wordt je bang van computers?
+- Waarom begin je over computers?
+- Heb je een probleem met computers?
+- Denk je dat computers je niet kunnen helpen?
+- Wat denk je over computers?
+
++ ben ik *
+- Denk je dat je <star> bent?
+- Wil je <star> zijn ?
+- Zou je willen dat ik je <star> zou noemen?
+- Wat zou het betekenen als je <star> zou zijn?
+
++ ben jij *
+- Ben je geintereseerd of ik <star> ben of niet?
+- Zou je willen dat ik geen <star> zou zijn?
+- Misschien ben ik <star> in je fantasie.
+- Denk je soms dat ik <star> ben?
+- Wat als ik <star> zou zijn?
+
++ [*] (haha|hahaha|hah|hahahaha|lach|lachen) [*]
+- Maak je een grapje
+- Ben je grapjes aan het maken?
+
++ [*] omdat *
+- Is dat de reden?
+
++ [*] (hallo|hoi|goedemiddag|goededag|goedemorgen|goedenavond) [*] [<bot name>]
+- {random}Hallo daar, taxi nodig? waar naartoe?|Hallo!|Goedendag, kan ik je helpen?{/random}
+
++ hoe (gaat|is) het [*]
+- Met mij gaat het {random}goed,|wel oke,|prima,|uitstekend!{/random} met jou?
+
++ [*] [gaat] [heel] slecht [*]
+- Vervelend om te horen, kan ik je helpen?
+- Ach, wat vervelend zeg, kan ik je helpen?
+
++ [*] [gaat] [heel] (goed|uitstekend|super goed) [*]
+- Fijn om te horen!
+- Daar ben ik blij om!
+
++ nee [*]
+- Geen probleem.
+- Oke, kan ik je ergens bij helpen?
+
++ ja [*]
+- Oke, wat is er?
+- Waar kan ik je bij helpen?
+
++ [ik wil] [graag] [een] taxi [bestellen] [*]
+- {random}Naar welke stad?|Een taxi naar welke stad?|Naar welke stad wil je toe?|Naar welke stad moet de taxi naartoe gaan?{/random}
+
++ naar * [*]
+- <set stad=<star1>>Wat is de straatnaam in <get stad>?\n
+^ (Wees volledig, dus: De straatnaam is ...)
+- <set stad=<star1>><get stad>, wat is de straatnaam?\n
+^ (Wees volledig, dus: De straatnaam is ...)
+- <set stad=<star1>>Weet je ook de straatnaam in <get stad>?\n
+^ (Wees volledig, dus: De straatnaam is ...)
+
++ de straatnaam is *
+- <set straat=<star1>>Wat is het huisnummer in <get stad> <get straat>?\n
+^ (Wees volledig, dus: Nummer...)
+
++ [*] nummer _ [*]
+- Kun je het nummer ook in een getal noemen?
+
++ [*] nummer # [*]
+- <set huisnummer=<star1>>Je wilt dus een taxi naar <get stad> <get straat> <get huisnummer>? Vanaf welk vertrek adres? \n
+^(Wees volledig, dus: vanaf ........)
+
++ [*] vanaf * *[*]
+- <set startadres=<star1>><set startnummer=<star2>> Je wilt opgehaald worden op <get startadres> <get startnummer>, dat is geen enkel probleem!\n
+^ Noem een tijd wanneer je hier opgehaald wilt worden
+
++ [*] om (@tijden) [uur] [*]
+- <set tijd=<star>>Hoeveel personen reizen er mee? (Wees volledig, dus: ... personen)
+
++ [*] _ personen
+- Kun je het aantal personen ook als getal noemen?
+
++ [*] # personen
+- <set personen=<star>><get personen> personen zeg je?\n
+^ In welke auto wilt u gereden worden?\n
+^ Tesla, Jaguar, Mercedes of Ford?
+
++ [*] (@autos) [*]
+- <set autos=<star>>De <get autos> wordt voor u geregeld!\n
+^ Je wordt opgehaald op <get startadres> <get startnummer>, in een <get autos> voor <get personen> personen, om <get tijd>, en gebracht naar <get stad> <get straat> <get huisnummer>\n
+^ Wil je verder nog iets van mij weten?
+
++ nee bedankt
+- Oke, tot {random}ziens|snel|gauw|ooit{/random}!
+
+
+
+
+
+
+
+

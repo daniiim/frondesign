@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TaxiService.nl</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="chat.css">
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="datadumper.js"></script>
+<script type="text/javascript" src="rivescript.js"></script>
+</head>
+<body>
+
+<h1>TaxiService.nl</h1>
+<h3>Bestel je bij een van onze medewerkers</h3>
+<p> Per ongeluk iets verkeer gezegd? typ "terug"</p>
+
+<fieldset>
+    <legend>Chat</legend>
+    <div id="dialogue"></div>
+</fieldset>
+
+<form onSubmit="return sendMessage()">
+    <fieldset>
+        <legend>Bericht</legend>
+
+        <table class="input-table">
+            <tr>
+                <td class="text-box">
+                    <input type="text" size="40" name="message" id="message" autocomplete="off" disabled placeholder="Moment gedult..">
+                </td>
+                <td class="send-button">
+                    <input type="submit" value="Verstuur">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+// Handle the debug mode query string parameter.
+var debugMode = false;
+if (window.location.search.indexOf("debug=1") > -1) {
+    $("#toggle").val("Intern");
+    debugMode = true;
+} else {
+    $("#toggle").val("Intern");
+}
+
+// Create our RiveScript interpreter.
+var rs = new RiveScript({
+    debug:   debugMode,
+    onDebug: onDebug
+});
+
+// This won't work on the web!
+//rs.loadDirectory("brain");
+
+// Load our files from the brain/ folder.
+rs.loadFile([
+    "taxiservice.rive"
+    ], on_load_success, on_load_error);
+
+// You can register objects that can then be called
+// using <call></call> syntax
+rs.setSubroutine('fancyJSObject', function(rs, args){
+    // doing complex stuff here
+});
+
+function on_load_success () {
+    $("#message").removeAttr("disabled");
+    $("#message").attr("placeholder", "Typ je bericht");
+    $("#message").focus();
+
+    // Now to sort the replies!
+    rs.sortReplies();
+}
+
+function on_load_error (err) {
+    console.log("Loading error: " + err);
+}
+
+// Handle sending a message to the bot.
+function sendMessage () {
+    var text = $("#message").val();
+    $("#message").val("");
+    $("#dialogue").append("<div><span class='user'>Ik: <br></span>" + text + "</div>");
+    try {
+    var reply = rs.reply("soandso", text);
+    reply = reply.replace(/\n/g, "<br>");
+    $("#dialogue").append("<div><span class='bot'>TaxyService.nl: <br></span>" + reply + "</div>");
+    $("#dialogue").animate({ scrollTop: $("#dialogue").height() }, 1000);
+    } catch(e) {
+        window.alert(e.message + "\n" + e.line);
+        console.log(e);
+    }
+
+    return false;
+}
+
+// Button that turns debugging on and off.
+function toggleDebug () {
+    if (debugMode) {
+        window.location = "?debug=0";
+    } else {
+        window.location = "?debug=1";
+    }
+}
+
+function onDebug(message) {
+    if (debugMode) {
+        $("#debug").append("<div>[RS] " + escapeHtml(message) + "</div>");
+    }
+}
+
+function escapeHtml(text) {
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+</script>
+
+</body>
+</html>
