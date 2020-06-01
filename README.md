@@ -12,14 +12,10 @@ Inmiddels ben ik bijna volledig in staat mijn ideeën en schetsen om te zetten i
 Ik kreeg middels voorbeelden en instructies de opdracht om iedere twee weken een prototype op te leveren in deze repository. Dit zijn in totaal 3 opdrachten geworden. Welke ik middels *versioncontrol* met *Github* en een readme zo goed mogelijk heb geprobeerd te documenteren. 
 
 ## Code en documentatie
-+ Opdracht 1 [hier](https://github.com/danilomerea/frondesign/tree/master/opdracht1)
-+ Opdracht 2 [hier](https://github.com/danilomerea/frondesign/tree/master/opdracht2)
-+ Opdracht 3 [hier](https://github.com/danilomerea/frondesign/tree/master/opdracht3)
++ Opdracht 1 [hier](https://github.com/daniiim/frondesign/tree/master/opdracht1)
++ Opdracht 2 [hier](https://github.com/daniiim/frondesign/tree/master/opdracht2)
++ Opdracht 3 [hier](https://github.com/daniiim/frondesign/tree/master/opdracht3)
 
-## Live demo's
-+ Opdracht 1 [hier](https://danilomerea.github.io/frondesign/opdracht1/v1.1/)
-+ Opdracht 2 [hier](https://danilomerea.github.io/frondesign/opdracht2/v7/)
-+ Opdracht 3 [hier](https://danilomerea.github.io/frondesign/opdracht3/v9/)
 
 
 
