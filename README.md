@@ -21,17 +21,5 @@ Ik kreeg middels voorbeelden en instructies de opdracht om iedere twee weken een
 + Opdracht 2 [hier](https://danilomerea.github.io/frondesign/opdracht2/v7/)
 + Opdracht 3 [hier](https://danilomerea.github.io/frondesign/opdracht3/v9/)
 
-## Overige info
-Naam: Danilo Merea
-
-Studnr.: 500712043
-
-Mail: [danilo.merea@hva.nl](mailto:danilo.merea@hva.nl)
-
-Klas: FFD herkansingsklas 1
-
-Docent: Koop Reynders
-
-
 
 
